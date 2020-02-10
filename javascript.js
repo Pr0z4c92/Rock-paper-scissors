@@ -2,7 +2,8 @@
 
 let firstLevel = PlayerSelection();
 let secondLevel = computerSelection();
-let finalStage = gameRules();
+let thirdStage = gameRules();
+let fourthStage = keepScore();
 
 function PlayerSelection() {
     let selection = prompt('Can you win?', 'Rock, Paper or Scissors');
@@ -12,7 +13,7 @@ function PlayerSelection() {
         return 'Paper';
     } else if ( selection.toLowerCase() === 'scissors') {
         return 'Scissors';
-    } else return 'Computer wins by default, you suck mate!'
+    } else return 'Not applicable';
 }
 
 function computerSelection() {
@@ -23,29 +24,43 @@ function computerSelection() {
 
 function gameRules() {
     /* Player */ if (firstLevel === ('Rock') && secondLevel === ('Scissors')) {
-        return 'Guess you win this round!';
+        return 'Win';
     } else if (firstLevel === ('Paper') && secondLevel === ('Rock')) {
-        return 'Guess you win this round!';
+        return 'Win';
     } else if (firstLevel === ('Scissors') && secondLevel === ('Paper')) {
-        return 'Guess you win this round!';
+        return 'Win';
     } /* Computer */ else if (secondLevel === ('Rock') && firstLevel === ('Scissors')) {
-        return 'Guess Larry gengrich wins this round!';
+        return 'Lose';
     } else if (secondLevel === ('Paper') && firstLevel === ('Rock')) {
-        return 'Guess Larry gengrich wins this round!';
+        return 'Lose';
     } else if (secondLevel === ('Scissors') && firstLevel === ('Paper')) {
-        return 'Guess Larry gengrich wins this round!';
+        return 'Lose';
     } /* Draw */  else if (firstLevel === ('Paper') && secondLevel === ('Paper')) {
-        return 'whoops. That look like draw to me, better luck next time!!';
+        return 'Draw';
     } else if (firstLevel === ('Rock') && secondLevel === ('Rock')) {
-        return 'whoops. That look like draw to me, better luck next time!!';
+        return 'Draw';
     }else if (firstLevel === ('Scissors') && secondLevel === ('Scissors')) {
-        return 'whoops. That look like draw to me, better luck next time!!';
-    } 
+        return 'Draw';
+    } else return 'Do you want to play or not?';
+}
+
+function keepScore(){
+    let player = 0;
+    let computer = 0;
+    let draw = 0;
+        if (thirdStage === ('Win')) {
+            return player++;
+        } else if (thirdStage === ('Lose')) {
+            return computer++;
+        } else if (thirdStage === ('Draw')) {
+            return draw++;
+        }
 }
 
 console.log(firstLevel);
 console.log(secondLevel);
-console.log(finalStage);
+console.log(thirdStage);
+console.log(fourthStage);
 
 
 /* let randomNumber = Math.floor(Math.random() * 75) + 1;
