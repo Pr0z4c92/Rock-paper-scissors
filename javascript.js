@@ -34,9 +34,13 @@ function gameRules() {
         return 'Guess Larry gengrich wins this round!';
     } else if (secondLevel === ('Scissors') && firstLevel === ('Paper')) {
         return 'Guess Larry gengrich wins this round!';
-    } /* Draw */ else if ((secondLevel === ('Paper') && computerSelection === ('Paper')) || (secondLevel === ('Rock') && computerSelection === ('Rock')) || (secondLevel === ('Scissors') && computerSelection === ('Scissors'))) {
-        return 'whoops. That look like draw to me, bet luck next time!!';
-    }
+    } /* Draw */  else if (firstLevel === ('Paper') && secondLevel === ('Paper')) {
+        return 'whoops. That look like draw to me, better luck next time!!';
+    } else if (firstLevel === ('Rock') && secondLevel === ('Rock')) {
+        return 'whoops. That look like draw to me, better luck next time!!';
+    }else if (firstLevel === ('Scissors') && secondLevel === ('Scissors')) {
+        return 'whoops. That look like draw to me, better luck next time!!';
+    } 
 }
 
 console.log(firstLevel);
