@@ -3,7 +3,7 @@
 let firstLevel = PlayerSelection();
 let secondLevel = computerSelection();
 let thirdStage = gameRules();
-let fourthStage = keepScore();
+// let fourthStage = keepScore();
 
 function PlayerSelection() {
     let selection = prompt('Can you win?', 'Rock, Paper or Scissors');
@@ -24,44 +24,44 @@ function computerSelection() {
 
 function gameRules() {
     /* Player */ if (firstLevel === ('Rock') && secondLevel === ('Scissors')) {
-        return 'Win';
+        return 'win';
     } else if (firstLevel === ('Paper') && secondLevel === ('Rock')) {
-        return 'Win';
+        return 'win';
     } else if (firstLevel === ('Scissors') && secondLevel === ('Paper')) {
-        return 'Win';
+        return 'win';
     } /* Computer */ else if (secondLevel === ('Rock') && firstLevel === ('Scissors')) {
-        return 'Lose';
+        return 'lose';
     } else if (secondLevel === ('Paper') && firstLevel === ('Rock')) {
-        return 'Lose';
+        return 'lose';
     } else if (secondLevel === ('Scissors') && firstLevel === ('Paper')) {
-        return 'Lose';
+        return 'lose';
     } /* Draw */  else if (firstLevel === ('Paper') && secondLevel === ('Paper')) {
-        return 'Draw';
+        return 'draw';
     } else if (firstLevel === ('Rock') && secondLevel === ('Rock')) {
-        return 'Draw';
+        return 'draw';
     }else if (firstLevel === ('Scissors') && secondLevel === ('Scissors')) {
-        return 'Draw';
+        return 'draw';
     } else return 'Do you want to play or not?';
 }
 
-function keepScore(){
-    let player = 0;
-    let computer = 0;
-    let draw = 0;
-        if (thirdStage === ('Win')) {
-            return player++;
-        } else if (thirdStage === ('Lose')) {
-            return computer++;
-        } else if (thirdStage === ('Draw')) {
-            return draw++;
-        }
+let player = 0;
+let computer = 0;
+let draw = 0;
+
+ if (thirdStage === ('win')) {
+    player = 0 + 1;
+} else if (thirdStage === ('lose')) {
+    computer= 0 + 1;
+} else if (thirdStage === ('draw')) {
+    draw = 0 + 1;
 }
 
 console.log(firstLevel);
 console.log(secondLevel);
 console.log(thirdStage);
-console.log(fourthStage);
-
+console.log(player);
+console.log(computer);
+console.log(draw);
 
 /* let randomNumber = Math.floor(Math.random() * 75) + 1;
 let firstChoice = prompt('Rock, Paper or scissors?');
